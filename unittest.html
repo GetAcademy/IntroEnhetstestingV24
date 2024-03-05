@@ -13,18 +13,7 @@
     <script src="https://code.jquery.com/qunit/qunit-2.20.1.js"></script>
     <script src="script.js"></script>
     <script>
-        QUnit.test('1', function (assert) {
-            // arrange
-            const text = "1";
-
-            // act
-            const translatedText = translateText(text);
-
-            // assert
-            assert.equal(translatedText, '1');
-        });
-
-        QUnit.test('two numbers', function (assert) {
+        QUnit.test('only lower case letters', function (assert) {
             // arrange
             const text = "terje";
 
@@ -35,6 +24,39 @@
             assert.equal(translatedText, 'toterorjoje');
         });
 
+        QUnit.test('text with non letters', function (assert) {
+            // arrange
+            const text = "get academy!";
+
+            // act
+            const translatedText = translateText(text);
+
+            // assert
+            assert.equal(translatedText, 'gogetot acocadodemomy!');
+        });
+
+        QUnit.test('lower and upper case letters', function (assert) {
+            // arrange
+            const text = "Hei";
+
+            // act
+            const translatedText = translateText(text);
+
+            // assert
+            assert.equal(translatedText, 'Hohei');
+        });
+
+        QUnit.test('blank', function (assert) {
+            // arrange
+            const text = '';
+
+            // act
+            const translatedText = translateText(text);
+
+            // assert
+            assert.equal(translatedText, '');
+        });
+
         QUnit.test('null', function (assert) {
             // arrange
             const text = null;
@@ -43,7 +65,18 @@
             const translatedText = translateText(text);
 
             // assert
-            assert.equal(translatedText, 'toterorjoje');
+            assert.equal(translatedText, '');
+        });
+
+        QUnit.test('number', function (assert) {
+            // arrange
+            const text = 123;
+
+            // act
+            const translatedText = translateText(text);
+
+            // assert
+            assert.equal(translatedText, '');
         });
     </script>
 </body>
