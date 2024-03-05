@@ -1,0 +1,10 @@
+Enhetstesting
+
+- Hva er enhetstesting
+- Et første eksempel - Funksjon for å oversette til røverspråk
+- Flere perspektiver på enhetstesting 
+   - korrekthet
+   - regresjon
+   - testdrevet utvikling
+   - test coverage
+ - Testing av controller-funksjoner i et MVC-oppsett
