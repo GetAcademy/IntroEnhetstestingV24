@@ -17,19 +17,21 @@
         var points;
         var pointsPerClick;
         var smileyIndex;
+        var costPerUpgrade;
 
-        function initModel(somePoints, somePointsPerClick, someSmileyIndex) {
+        function initModel(somePoints, somePointsPerClick, someSmileyIndex, someCostPerUpgrade) {
             points = somePoints ?? 0;
             pointsPerClick = somePointsPerClick ?? 1;
             smileyIndex = someSmileyIndex ?? 0;
+            costPerUpgrade = someCostPerUpgrade ?? 10;
         }
 
         // dummy view
-        function updateView() {}
+        function updateView() { }
 
         QUnit.test('init', function (assert) {
             // arrange
-            
+
             // act
             initModel();
 
@@ -37,6 +39,7 @@
             assert.equal(points, 0);
             assert.equal(pointsPerClick, 1);
             assert.equal(smileyIndex, 0);
+            assert.equal(costPerUpgrade, 10);
         });
 
         QUnit.test('click', function (assert) {
@@ -60,6 +63,31 @@
             // assert
             assert.equal(pointsPerClick, 1);
             assert.equal(points, 0);
+        });
+
+        QUnit.test('upgrade with enough points', function (assert) {
+            // arrange
+            initModel(10);
+
+            // act
+            buyUpgrade();
+
+            // assert
+            assert.equal(pointsPerClick, 2);
+            assert.equal(points, 0);
+        });
+
+        QUnit.test('2 upgrades', function (assert) {
+            // arrange
+            initModel(20);
+
+            // act
+            buyUpgrade();
+            buyUpgrade();
+
+            // assert
+            assert.equal(pointsPerClick, 2);
+            assert.equal(points, 10);
         });
 
         QUnit.test('click => smiley 0 -> 1', function (assert) {

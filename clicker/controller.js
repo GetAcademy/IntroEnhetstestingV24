@@ -5,8 +5,9 @@ function doClick() {
 }
 
 function buyUpgrade() {
-    if (points < 10) return;
-    points -= 10;
+    if (points < costPerUpgrade) return;
+    points -= costPerUpgrade;
     pointsPerClick++;
+    costPerUpgrade *= 2;
     updateView();
 }
