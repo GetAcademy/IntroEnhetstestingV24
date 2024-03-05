@@ -1,7 +1,9 @@
 Enhetstesting
 
 - Hva er enhetstesting
-- Et første eksempel - Funksjon for å oversette til røverspråk
+- Et første eksempel 
+    - Funksjon for å oversette til røverspråk
+    - QUnit
 - Flere perspektiver på enhetstesting 
    - korrekthet
    - regresjon
