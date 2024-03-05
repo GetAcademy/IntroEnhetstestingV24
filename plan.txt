@@ -10,4 +10,8 @@ Enhetstesting
    - testdrevet utvikling
    - test coverage
    - rolle i smidig/agile metodikk
+   - testbar kode er bra kode - av og til er det vanskelig å teste fordi 
+     koden har for mange avhengigheter hit og dit - det kan man kan ofte
+     finne ut av når man prøver å teste, det har en stor verdi å identifisere
+     for mange avhengigheter
  - Testing av controller-funksjoner i et MVC-oppsett
