@@ -1,5 +1,7 @@
 Enhetstesting
 
+Pause 10:32
+
 - Hva er enhetstesting
 - Et første eksempel 
     - Funksjon for å oversette til røverspråk
@@ -9,4 +11,5 @@ Enhetstesting
    - regresjon
    - testdrevet utvikling
    - test coverage
+   - rolle i smidig/agile metodikk
  - Testing av controller-funksjoner i et MVC-oppsett
