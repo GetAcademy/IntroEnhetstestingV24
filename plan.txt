@@ -1,7 +1,5 @@
 Enhetstesting
 
-Pause 10:32
-
 - Hva er enhetstesting
 - Et første eksempel 
     - Funksjon for å oversette til røverspråk

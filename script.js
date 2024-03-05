@@ -11,3 +11,8 @@ function translateText(text) {
     }
     return translatedText;
 }
+
+function formatHeader(text, startCount){
+    const stars = '*'.repeat(startCount);
+    return `${stars} ${text} ${stars}`;    
+}

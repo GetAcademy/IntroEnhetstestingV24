@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.1.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.1.js"></script>
+    <script src="script.js"></script>
+    <script>
+        QUnit.test('simple text', function (assert) {
+            // arrange
+            const text = "terje";
+
+            // act
+            const translatedText = formatHeader(text, 3);
+
+            // assert
+            assert.equal(translatedText, '*** terje ***');
+        });
+    </script>
+</body>
+
+</html>
