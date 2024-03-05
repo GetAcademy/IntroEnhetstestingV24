@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.1.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.1.js"></script>
+    <script src="controller.js"></script>
+    <script>
+        // model
+        var points;
+        var pointsPerClick;
+        var smileyIndex;
+
+        function initModel(somePoints, somePointsPerClick, someSmileyIndex) {
+            points = somePoints ?? 0;
+            pointsPerClick = somePointsPerClick ?? 1;
+            smileyIndex = someSmileyIndex ?? 0;
+        }
+
+        // dummy view
+        function updateView() {}
+
+        QUnit.test('init', function (assert) {
+            // arrange
+            
+            // act
+            initModel();
+
+            // assert
+            assert.equal(points, 0);
+            assert.equal(pointsPerClick, 1);
+            assert.equal(smileyIndex, 0);
+        });
+
+        QUnit.test('click', function (assert) {
+            // arrange
+            initModel();
+
+            // act
+            doClick();
+
+            // assert
+            assert.equal(points, 1);
+        });
+
+        QUnit.test('upgrade without enough points', function (assert) {
+            // arrange
+            initModel();
+
+            // act
+            buyUpgrade();
+
+            // assert
+            assert.equal(pointsPerClick, 1);
+            assert.equal(points, 0);
+        });
+
+        QUnit.test('click => smiley 0 -> 1', function (assert) {
+            // arrange
+            initModel();
+
+            // act
+            doClick();
+
+            // assert
+            assert.equal(smileyIndex, 1);
+        });
+
+        QUnit.test('click => smiley 1 -> 0', function (assert) {
+            // arrange
+            initModel();
+            smileyIndex = 1;
+
+            // act
+            doClick();
+
+            // assert
+            assert.equal(smileyIndex, 0);
+        });
+    </script>
+</body>
+
+</html>
